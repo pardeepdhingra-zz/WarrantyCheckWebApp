@@ -26,7 +26,6 @@ class Login extends Component {
       .catch((error) => {
         console.log(error)
       });
-
   }
 
   render() {
@@ -55,7 +54,9 @@ class Login extends Component {
             Login <i className="fa fa-angle-double-right"></i>
           </Button>
         </form>
+        <span className="form-links">
           Don't have Account? <Link to="/registration">Create Account?</Link>
+        </span>
       </Col>
     )
   }

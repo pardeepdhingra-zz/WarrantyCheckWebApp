@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { FormControl, Button } from 'react-bootstrap'
+import { FormControl, Button, Col } from 'react-bootstrap'
 import { Link } from 'react-router'
+import { register } from '../../graphql/services'
+import './registration.css'
 
 class Registration extends Component {
   constructor(props){
@@ -8,15 +10,27 @@ class Registration extends Component {
     this.handleSubmit = this._handleSubmit.bind(this)
   }
 
-  _handleSubmit(e){
-    alert('Form submitted' + this.state.email + " : " + this.state.password)
+  _handleSubmit(event) {
+    event.preventDefault();
+    let { email, password, confirm_password } = this.state;
+    if(password === confirm_password){
+      register(email, password)
+        .then(user => {
+          console.log(user)
+        })
+        .catch((error) => {
+          console.log(error)
+        });
+    } else {
+      console.log("password not matching");
+    }
   }
 
   render() {
     return (
-        <div>
+        <Col md={4} mdOffset={4} className="registration-form">
   				<form method="post" onSubmit={this.handleSubmit}>
-            <h5 className="form-signin-heading">Please Enter your details</h5>
+            <h5 className="form-registration-heading">Registration</h5>
             <FormControl
               type="text"
               placeholder="Email/Phone"
@@ -42,8 +56,8 @@ class Registration extends Component {
               Register <i className="fa fa-angle-double-right"></i>
             </Button>
   				</form>
-          <Link to="login">Login</Link>
-        </div>
+          <span className="form-links">Already have account? <Link to="login">Login</Link></span>
+        </Col>
     );
   }
 }

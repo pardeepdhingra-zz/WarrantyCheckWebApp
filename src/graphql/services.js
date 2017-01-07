@@ -21,6 +21,26 @@ export function login(email, password) {
   });
 }
 
+export function register(email, password) {
+  return new Promise((resolve, reject) => {
+    request.post(
+      {
+        url: `${config.api}/user`,
+        form: { email, password },
+        json: true
+      },
+
+      function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+          console.log(body)
+          return resolve(body);
+        }
+        return reject(body);
+      }
+    );
+  });
+}
+
 function debugEmoji(time) {
   if (time < 100) {
     return emoji.get('rocket');

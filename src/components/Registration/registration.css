@@ -1,4 +1,4 @@
-.login-form {
+.registration-form {
   background-color: #fff;
   padding: 10px 30px 30px 30px;
   color: #000;
@@ -7,7 +7,7 @@
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
-.form-signin-heading {
+.form-registration-heading {
   font-size: 2em;
   text-align: center;
 }
