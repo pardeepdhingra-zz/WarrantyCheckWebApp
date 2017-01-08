@@ -41,7 +41,6 @@ let BrandType = new GraphQLObjectType({
   }
 });
 
-
 var Root = new GraphQLObjectType({
   name: 'Root',
   fields: {
