@@ -13,7 +13,7 @@ export function login(email, password) {
 
       function (error, response, body) {
         if (!error && response.statusCode === 200) {
-          return resolve(response.headers['access-token']);
+          return resolve({token: response.headers['access-token'], user: body.data});
         }
         return reject(body);
       }

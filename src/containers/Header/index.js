@@ -1,27 +1,27 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavItem } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap';
-
+import { Link } from 'react-router'
+import RegisterLink from '../../components/RegisterLink'
+import LoginLink from '../../components/LoginLink'
+import LogoutLink from '../../components/LogoutLink'
 import './header.css'
 
 class Header extends Component {
   render() {
     return (
-      <Navbar inverse collapseOnSelect>
-      <Navbar.Header>
-          <Navbar.Brand>
-            <a href="/">Warranty Check</a>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <LinkContainer to="/login">
-              <NavItem eventKey={1}>Login</NavItem>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <nav className="navbar navbar-default navbar-static-top">
+       <div className="container">
+         <div id="navbar-collapse" className="collapse navbar-collapse">
+           <ul className="nav navbar-nav">
+             <li><Link to="/">Home</Link></li>
+           </ul>
+           <ul className="nav navbar-nav navbar-right">
+            <li><LoginLink /></li>
+            <li><RegisterLink /></li>
+            <li><LogoutLink /></li>
+           </ul>
+         </div>
+       </div>
+     </nav>
     );
   }
 }
