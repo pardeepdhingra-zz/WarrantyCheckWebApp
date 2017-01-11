@@ -6,9 +6,22 @@ nav.navbar {
 nav.navbar .navbar-brand {
   color: #fff !important;
 }
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:focus,
-.navbar-inverse .navbar-nav > .active > a:hover {
-  background-color: #c1c1c1 !important;
-  color: #333333 !important;
+
+.nav.navbar-nav li div {
+  margin-top: 15px;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+.nav.navbar-nav li div a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.nav.navbar-nav li div a:hover, a:visited, a:active {
+  text-decoration: none !important;
+}
+
+.nav.navbar-nav li a{
+  color: #fff !important;
 }

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap'
 import DocumentTitle from 'react-document-title';
 import ForgotPasswordForm from '../../components/ForgotPasswordForm'
 import LoginLink from '../../components/LoginLink'
 import './forgotpassword.css'
 
-  export default class ForgotPasswordPage extends React.Component {
+class ForgotPasswordPage extends Component {
   render() {
     return (
       <DocumentTitle title={`ForgotPassword`}>
@@ -27,3 +27,5 @@ import './forgotpassword.css'
     );
   }
 }
+
+export default ForgotPasswordPage

@@ -3,6 +3,8 @@ import { Row, Col } from 'react-bootstrap'
 import DocumentTitle from 'react-document-title';
 import RegistrationForm from '../../components/RegistrationForm'
 import LoginLink from '../../components/LoginLink'
+import NotAuthenticated  from '../NotAuthenticated'
+
 import './registration.css'
 
 export default class RegistrationPage extends Component {
@@ -17,9 +19,9 @@ export default class RegistrationPage extends Component {
           </Row>
           <Row>
             <Col xs={12} sm={4} smOffset={4}>
-              <span className="pull-right">
+              <NotAuthenticated className="pull-right">
                 <LoginLink />
-              </span>
+              </NotAuthenticated>
             </Col>
           </Row>
         </div>

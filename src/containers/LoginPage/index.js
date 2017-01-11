@@ -4,6 +4,8 @@ import DocumentTitle from 'react-document-title';
 import RegisterLink from '../../components/RegisterLink'
 import LoginForm from '../../components/LoginForm'
 import ForgotPasswordLink from '../../components/ForgotPasswordLink'
+import NotAuthenticated  from '../NotAuthenticated'
+
 import './login.css'
 
 export default class LoginPage extends React.Component {
@@ -18,10 +20,12 @@ export default class LoginPage extends React.Component {
           </Row>
           <Row>
             <Col xs={12} sm={4} smOffset={4}>
-              <span><RegisterLink /></span>
-              <span className="pull-right">
+              <NotAuthenticated className="authenticate-link">
+                <RegisterLink />
+              </NotAuthenticated>
+              <NotAuthenticated className="authenticate-link pull-right">
                 <ForgotPasswordLink />
-              </span>
+              </NotAuthenticated>
             </Col>
           </Row>
         </div>
